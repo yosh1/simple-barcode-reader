@@ -5,25 +5,25 @@
         android:layout_height="match_parent"
         tools:context="yoshi1125hisa.barcode_sample.MainActivity">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textViewScanned"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:gravity="center"
-                android:textAlignment="center"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textViewScanned"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:onClick="search"
+            android:textColor="@android:color/white" />
 
             <com.journeyapps.barcodescanner.CompoundBarcodeView
                 android:id="@+id/barcodeView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
-        </LinearLayout>
 
     </RelativeLayout>
