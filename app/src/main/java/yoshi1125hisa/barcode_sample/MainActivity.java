@@ -4,6 +4,7 @@ package yoshi1125hisa.barcode_sample;
  import android.app.SearchManager;
  import android.content.Intent;
  import android.content.pm.PackageManager;
+ import android.net.Uri;
  import android.os.Bundle;
  import android.support.v4.app.ActivityCompat;
  import android.support.v4.content.ContextCompat;
@@ -53,6 +54,16 @@ public class MainActivity extends Activity {
             {
                 textView.setText(result.getText());
                 keyword = result.getText();
+
+                findViewById(R.id.textViewScanned).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Uri uri = Uri.parse("https://www.google.com/search?q=バーコード%"+keyword);
+                        Intent i = new Intent(Intent.ACTION_VIEW,uri);
+                        startActivity(i);
+                    }
+                });
+
             }
 
             @Override
@@ -74,12 +85,5 @@ public class MainActivity extends Activity {
         super.onPause();
     }
 
-    public void search(View v){
-        Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
-        intent.setClassName("yoshi1125hisa.barcode_sample",
-                "yoshi1125hisa.barcode_sample.MainActivity");
-        intent.putExtra(SearchManager.QUERY, "バーコード" + keyword);
-        startActivity(intent);
 
-    }
 }
