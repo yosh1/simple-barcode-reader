@@ -11,7 +11,6 @@ package yoshi1125hisa.barcode_sample;
  import android.view.View;
  import android.widget.TextView;
  import android.widget.Toast;
-
  import com.google.zxing.ResultPoint;
  import com.journeyapps.barcodescanner.BarcodeCallback;
  import com.journeyapps.barcodescanner.BarcodeResult;
